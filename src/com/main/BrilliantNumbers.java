@@ -1,4 +1,4 @@
-package com.brilliantnumbers;
+package com.main;
 
 import com.utils.Input;
 import com.utils.MathUtils;
