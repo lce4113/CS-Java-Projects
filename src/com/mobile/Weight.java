@@ -1,6 +1,6 @@
 package com.mobile;
 
-class Weight implements Structure {
+public class Weight implements Structure {
 
   public final int weight;
 

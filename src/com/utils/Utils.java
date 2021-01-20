@@ -22,6 +22,16 @@ public class Utils {
     return str.toString();
   }
 
+  public static <T> String arrayToString(T[] arr, String delimiter) {
+    StringBuilder str = new StringBuilder();
+    str.append(arr[0]);
+    for (int i = 1; i < arr.length; i++) {
+      str.append(delimiter);
+      str.append(arr[i]);
+    }
+    return str.toString();
+  }
+
   public static Integer numLength(int num) {
     return Integer.toString(num).length();
   }

@@ -1,4 +1,4 @@
-package com.main;
+package com.bellnumber;
 
 import java.util.ArrayList;
 import java.util.List;
