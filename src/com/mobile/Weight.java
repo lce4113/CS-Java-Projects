@@ -1,6 +1,6 @@
 package com.mobile;
 
-public class Weight implements Structure {
+public class Weight extends Structure {
 
   public final int weight;
 
@@ -8,6 +8,11 @@ public class Weight implements Structure {
     this.weight = weight;
   }
 
+  public int getWeight() {
+    return weight;
+  }
 }
 
-interface Structure {}
+abstract class Structure {
+  abstract int getWeight();
+}
