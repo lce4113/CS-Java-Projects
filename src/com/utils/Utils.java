@@ -5,6 +5,22 @@ import java.util.List;
 
 public class Utils {
 
+  public static Integer sum(Integer[] arr) {
+    int sum = 0;
+    for (Integer el : arr) {
+      sum += el;
+    }
+    return sum;
+  }
+
+  public static int sum(int[] arr) {
+    int sum = 0;
+    for (int el : arr) {
+      sum += el;
+    }
+    return sum;
+  }
+
   public static <T> List<T> unshift(List<T> arr, T newElement) {
     List<T> newArr = new ArrayList<>();
     newArr.add(newElement);
