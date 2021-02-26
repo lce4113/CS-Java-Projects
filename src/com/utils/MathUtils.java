@@ -18,7 +18,7 @@ public class MathUtils {
   public static List<Integer> primeFactorize(int num) {
     for (int i = 2; i <= Math.sqrt(num); i++) {
       if (isPrime(i) && num % i == 0) {
-        return Utils.unshift(primeFactorize(num / i), i);
+        return ArrayUtils.unshift(primeFactorize(num / i), i);
       }
     }
     List<Integer> arr = new ArrayList<>();

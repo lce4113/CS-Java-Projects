@@ -1,6 +1,6 @@
 package com.comparable;
 
-import com.utils.Utils;
+import com.utils.ArrayUtils;
 
 import java.util.Arrays;
 
@@ -18,9 +18,9 @@ public class Main {
             new Cow1(),
             new Cow1(1900, "Mr. Fred")
     };
-    System.out.println(Utils.arrayToString(cows, ", "));
+    System.out.println(ArrayUtils.arrayToString(cows, ", "));
     Arrays.sort(cows);
-    System.out.println(Utils.arrayToString(cows, ", "));
+    System.out.println(ArrayUtils.arrayToString(cows, ", "));
   }
 
   public static void animalCompare() {
@@ -32,11 +32,11 @@ public class Main {
             new Wombat(),
             new Wildebeest(1900, "Mr. Fred")
     };
-    System.out.println(Utils.arrayToString(animals, ", "));
+    System.out.println(ArrayUtils.arrayToString(animals, ", "));
     for (Animal a : animals) {
       a.eat(200);
     }
     Arrays.sort(animals);
-    System.out.println(Utils.arrayToString(animals, ", "));
+    System.out.println(ArrayUtils.arrayToString(animals, ", "));
   }
 }

@@ -1,7 +1,7 @@
 package com.bst;
 
 import com.randp.RandP;
-import com.utils.Utils;
+import com.utils.ArrayUtils;
 
 public class Main {
 
@@ -41,8 +41,8 @@ My guess is somewhere between 50 and 100.
       }
       depths[i] = tree.depth();
     }
-    System.out.println("All Depths: " + Utils.arrayToString(depths, ", "));
-    int average = Utils.sum(depths) / n;
+    System.out.println("All Depths: " + ArrayUtils.arrayToString(depths, ", "));
+    int average = ArrayUtils.sum(depths) / n;
     System.out.println("Average: " + average); // The average was usually 30, 31, or 32
   }
 
