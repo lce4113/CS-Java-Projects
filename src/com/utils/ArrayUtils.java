@@ -5,16 +5,36 @@ import java.util.List;
 
 public class ArrayUtils {
 
-  public static <T> void swap(T[] arr, int a, int b) {
-    T temp = arr[a];
-    arr[a] = arr[b];
-    arr[b] = temp;
+  public static int[] slice(int[] arr, int low, int high) {
+    int[] newArr = new int[high - low];
+    for (int i = low; i < high; i++) {
+      newArr[i - low] = arr[i];
+    }
+    return newArr;
+  }
+
+  public static int[] insert(int[] arr, int el, int pos) {
+    int[] newArr = new int[arr.length + 1];
+    for (int i = 0; i < pos; i++) {
+      newArr[i] = arr[i];
+    }
+    newArr[pos] = el;
+    for (int i = pos; i < arr.length; i++) {
+      newArr[i + 1] = arr[i];
+    }
+    return newArr;
   }
 
   public static <T> void swap(List<T> arr, int a, int b) {
     T temp = arr.get(a);
     arr.set(a, arr.get(b));
     arr.set(b, temp);
+  }
+
+  public static <T> void swap(T[] arr, int a, int b) {
+    T temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
   }
 
   public static <T> void rotate(List<T> arr, int low, int high) {

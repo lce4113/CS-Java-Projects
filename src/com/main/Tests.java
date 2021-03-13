@@ -6,9 +6,8 @@ import java.util.Arrays;
 
 public class Tests {
   public static void main(String[] args) {
-    Integer[] arr = {12, 18, 7, 19, 17};
-    System.out.println(Arrays.toString(arr));
-    ArrayUtils.rotate(arr, 2, 4);
+    Integer[] arr = {4, 2, 2, 5, 3, 7, 1};
+    ArrayUtils.rotate(arr, 1, 3);
     System.out.println(Arrays.toString(arr));
   }
 }
