@@ -17,5 +17,9 @@ public class Main {
     Sort.insertion(arr3);
     System.out.println(ArrayUtils.arrayToString(arr3, ", "));
 
+    Integer[] arr4 = {5, 12, 18, 7, 19, 17};
+    Sort.heap(arr4);
+    System.out.println(ArrayUtils.arrayToString(arr4, ", "));
+
   }
 }

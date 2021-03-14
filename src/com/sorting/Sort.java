@@ -65,4 +65,44 @@ public class Sort {
     }
   }
 
+  static <T extends Comparable> void heap(T[] arr) {
+    for (int i = arr.length; i > 1; i--) {
+      fullMaxHeap(arr, i);
+      ArrayUtils.swap(arr, 0, i - 1);
+    }
+  }
+
+  static <T extends Comparable> void fullMaxHeap(T[] arr, int high) {
+    int top = high / 2 - 1;
+    int left = top * 2 + 1, right = left + 1;
+    for (; top >= 0; top--, left -= 2, right -= 2) {
+      maxHeap(arr, high, top, left, right);
+    }
+  }
+
+  static <T extends Comparable> void maxHeap(T[] arr, int high, int top, int left, int right) {
+    if (right >= high) {
+      if (arr[left].compareTo(arr[top]) > 0) {
+        ArrayUtils.swap(arr, top, left);
+      }
+      return;
+    }
+    int max = (arr[left].compareTo(arr[right]) > 0) ? left : right;
+    if (arr[max].compareTo(arr[top]) > 0) {
+      ArrayUtils.swap(arr, top, max);
+      if (right * 2 + 1 < high) maxHeap(arr, high, right, right * 2 + 1, right * 2 + 2);
+      if (left * 2 + 1 < high) maxHeap(arr, high, left, left * 2 + 1, left * 2 + 2);
+    }
+  }
+
+  /*
+[5, 19, 18, 7, 12, 17]
+
+      19
+    /    \
+   5     18
+  / \    / \
+ 7  12  17
+   */
+
 }
