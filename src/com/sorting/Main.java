@@ -1,25 +1,34 @@
 package com.sorting;
 
-import com.utils.ArrayUtils;
+import java.util.Arrays;
+import java.util.function.Consumer;
 
 public class Main {
+
+  static final String RESET = "\u001b[0m";
+  static final String BLUE = "\u001b[0;34m";
+  static final String GREEN = "\u001b[0;32m";
+  static final String BOLD_RED = "\u001b[1;31m";
+
   public static void main(String[] args) {
-
-    Integer[] arr1 = {5, 12, 18, 7, 19, 17};
-    Sort.bubble(arr1);
-    System.out.println(ArrayUtils.arrayToString(arr1, ", "));
-
-    Integer[] arr2 = {5, 12, 18, 7, 19, 17};
-    Sort.selection(arr2);
-    System.out.println(ArrayUtils.arrayToString(arr2, ", "));
-
-    Integer[] arr3 = {5, 12, 18, 7, 19, 17};
-    Sort.insertion(arr3);
-    System.out.println(ArrayUtils.arrayToString(arr3, ", "));
-
-    Integer[] arr4 = {5, 12, 18, 7, 19, 17};
-    Sort.heap(arr4);
-    System.out.println(ArrayUtils.arrayToString(arr4, ", "));
-
+    testSort("Bubble Sort", Sort::bubble);
+    testSort("Selection Sort", Sort::selection);
+    testSort("Insertion Sort", Sort::insertion);
+    testSort("Heap Sort", Sort::heap);
+    testSort("Merge Sort", Merge::sort);
   }
+
+  public static void testSort(String name, Consumer<Integer[]> sortFunc) {
+    Integer[] arr = {5, 12, 18, 7, 19, 17};
+    Integer[] sortedArr = {5, 7, 12, 17, 18, 19};
+    testSort(name, sortFunc, arr, sortedArr);
+  }
+
+  public static void testSort(String name, Consumer<Integer[]> sortFunc, Integer[] arr, Integer[] sortedArr) {
+    sortFunc.accept(arr);
+    boolean sorted = Arrays.equals(arr, sortedArr);
+    System.out.println(BLUE + name + RESET + " - " +
+            (sorted ? GREEN : BOLD_RED) + Arrays.toString(arr) + RESET);
+  }
+
 }
