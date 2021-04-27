@@ -1,0 +1,10 @@
+# Disgusting Metadata
+Icon
+.DS_Store
+
+# Compiled .class files
+out/
+
+# IntelliJ stuff (I think)
+.idea/
+HelloWorld.iml
