@@ -4,7 +4,7 @@ import com.utils.ArrayUtils;
 
 public class Merge {
 
-  static void sort(Integer[] arr) {
+  public static void sort(Integer[] arr) {
 
     if (arr.length == 1) return;
 
@@ -31,4 +31,5 @@ public class Merge {
     ArrayUtils.copyTo(arr, sorted);
 
   }
+
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Sort {
 
-  static <T extends Comparable> void bubble(T[] arr) {
+  public static <T extends Comparable> void bubble(T[] arr) {
     for (int i = arr.length - 1; i > 0; i--) {
       for (int j = 0; j < i; j++) {
         if (arr[j].compareTo(arr[j + 1]) > 0) {
@@ -16,7 +16,7 @@ public class Sort {
     }
   }
 
-  static <T extends Comparable> void bubble(List<T> arr) {
+  public static <T extends Comparable> void bubble(List<T> arr) {
     for (int i = arr.size() - 1; i > 0; i--) {
       for (int j = 0; j < i; j++) {
         if (arr.get(j).compareTo(arr.get(j + 1)) > 0) {
@@ -26,7 +26,7 @@ public class Sort {
     }
   }
 
-  static <T extends Comparable> void selection(T[] arr) {
+  public static <T extends Comparable> void selection(T[] arr) {
     int minPos;
     for (int i = 0; i < arr.length - 1; i++) {
       minPos = ArrayUtils.min(arr, i);
@@ -34,7 +34,7 @@ public class Sort {
     }
   }
 
-  static <T extends Comparable> void selection(List<T> arr) {
+  public static <T extends Comparable> void selection(List<T> arr) {
     int minPos, len = arr.size();
     for (int i = 0; i < len; i++) {
       minPos = ArrayUtils.min(arr, i);
@@ -42,7 +42,7 @@ public class Sort {
     }
   }
 
-  static <T extends Comparable> void insertion(T[] arr) {
+  public static <T extends Comparable> void insertion(T[] arr) {
     for (int i = 2; i < arr.length; i++) {
       int j = i - 1;
       while (j > 0) {
@@ -53,7 +53,7 @@ public class Sort {
     }
   }
 
-  static <T extends Comparable> void insertion(List<T> arr) {
+  public static <T extends Comparable> void insertion(List<T> arr) {
     int len = arr.size();
     for (int i = 2; i < len; i++) {
       int j = i - 1;
@@ -65,14 +65,14 @@ public class Sort {
     }
   }
 
-  static <T extends Comparable> void heap(T[] arr) {
+  public static <T extends Comparable> void heap(T[] arr) {
     for (int i = arr.length; i > 1; i--) {
       fullMaxHeap(arr, i);
       ArrayUtils.swap(arr, 0, i - 1);
     }
   }
 
-  static <T extends Comparable> void fullMaxHeap(T[] arr, int high) {
+  private static <T extends Comparable> void fullMaxHeap(T[] arr, int high) {
     int top = high / 2 - 1;
     int left = top * 2 + 1, right = left + 1;
     for (; top >= 0; top--, left -= 2, right -= 2) {
@@ -80,7 +80,7 @@ public class Sort {
     }
   }
 
-  static <T extends Comparable> void maxHeap(T[] arr, int high, int top, int left, int right) {
+  private static <T extends Comparable> void maxHeap(T[] arr, int high, int top, int left, int right) {
     if (right >= high) {
       if (arr[left].compareTo(arr[top]) > 0) {
         ArrayUtils.swap(arr, top, left);
