@@ -8,9 +8,9 @@ public class Main {
 
         int[] values;
 
-        values = new int[]{1, 2, 3, 5, 6};
+        values = new int[]{1, 3, 2, 4, 3};
         setDice(values);
-        System.out.println(DiceValue.consec(values));
+        System.out.println(DiceValue.isSmallStraight(dice));
 
     }
 

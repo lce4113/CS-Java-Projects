@@ -106,7 +106,7 @@ public class DiceValue {
             if (curRoll == lastRoll + 1) {
                 curSeq++;
                 if (curSeq > longestSeq) longestSeq = curSeq;
-            } else {
+            } else if (curRoll != lastRoll) {
                 curSeq = 0;
             }
         }
@@ -137,16 +137,15 @@ public class DiceValue {
 // { 1, 3, 4, 5, 6 } --> true
 // { 2, 3, 4, 4, 5 } --> true
 // { 1, 2, 2, 3, 3 } --> false
-    static boolean isSmallStraight(Die[] dice) {
+    public static boolean isSmallStraight(Die[] dice) {
         int[] sortedRolls = diceToValues(dice);
         Arrays.sort(sortedRolls);
         boolean nonconsec = false;
         for (int i = 1; i < sortedRolls.length; i++) {
             int lastRoll = sortedRolls[i - 1], curRoll = sortedRolls[i];
             if (curRoll != lastRoll + 1) {
-                System.out.println(curRoll + " " + lastRoll);
-                if (curRoll != lastRoll) return false;
                 if (nonconsec) return false;
+                if (curRoll != lastRoll && i != 1 && i != sortedRolls.length - 1) return false;
                 nonconsec = true;
             }
         }
